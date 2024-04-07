@@ -1,45 +1,35 @@
-import Database from "../Database/index.js";
-export default function QuizRoutes(app) {
-
-  app.get("/api/quizzes", (req, res) => {
-    const quizzes = Database.quizzes;
+import db from "../Database/index.js";
+function QuizRoutes(app) {
+    app.post("/api/courses/:cid/quizzes", (req, res) => {
+        const { cid } = req.params;
+        const newQuiz = {
+          ...req.body,
+          course: cid,
+          _id: new Date().getTime().toString(),
+        };
+        db.quizzes.push(newQuiz);
+        res.send(newQuiz);
+      });
+    
+  app.get("/api/courses/:cid/quizzes", (req, res) => {
+    const { cid } = req.params;
+    const quizzes = db.quizzes
+      .filter((q) => q.course === cid);
     res.send(quizzes);
   });
-
-  app.post("/api/quizzes", (req, res) => {
-    const quiz = { ...req.body,
-      _id: new Date().getTime().toString() };
-    Database.quizzes.push(quiz);
-    res.send(quiz);
+  app.delete("/api/quizzes/:qid", (req, res) => {
+    const { qid } = req.params;
+    db.quizzes = db.quizzes.filter((q) => q._id !== qid);
+    res.sendStatus(200);
   });
-
-  app.delete("/api/quizzes/:id", (req, res) => {
-    const { id } = req.params;
-    Database.quizzes = Database.quizzes
-      .filter((c) => c._id !== id);
+  app.put("/api/quizzes/:qid", (req, res) => {
+    const { qid } = req.params;
+    const quizIndex = db.quizzes.findIndex(
+      (q) => q._id === qid);
+    db.quizzes[quizIndex] = {
+      ...db.quizzes[quizIndex],
+      ...req.body
+    };
     res.sendStatus(204);
   });
-
-  app.put("/api/quizzes/:id", (req, res) => {
-    const { id } = req.params;
-    const quiz = req.body;
-    Database.quizzes = Database.quizzes.map((c) =>
-      c._id === id ? { ...c, ...quiz } : c
-    );
-    res.sendStatus(204);
-  });
-   
-  app.get("/api/quizzes/:id", (req, res) => {
-    const { id } = req.params;
-    const quiz = Database.quizzes
-      .find((c) => c._id === id);
-    if (!quiz) {
-      res.status(404).send("quiz not found");
-      return;
-    }
-    res.send(quiz);
-  });
-
-
-
 }
