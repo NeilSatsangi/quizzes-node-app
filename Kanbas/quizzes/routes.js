@@ -33,3 +33,5 @@ function QuizRoutes(app) {
     res.sendStatus(204);
   });
 }
+
+export default QuizRoutes;
