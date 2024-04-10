@@ -10,7 +10,6 @@ function QuizRoutes(app) {
     db.quizzes.push(newQuiz);
     res.send(newQuiz);
   });
-
   app.get("/api/courses/:cid/quizzes", (req, res) => {
     const { cid } = req.params;
     const quizzes = db.quizzes

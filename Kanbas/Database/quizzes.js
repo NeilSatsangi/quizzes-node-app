@@ -19,6 +19,10 @@ export default [
         availableDate: "2024-01-10T23:59:59",
         untilDate: "2024-01-11T23:59:59",
         published: false,
+        viewResponses: "Always",
+        lockdownRequired: true,
+        viewQuizResults: true,
+        for: "Everyone",
     },
     {
         _id: "1001",
