@@ -51,8 +51,8 @@ export default [
         title: "Question 2",
         points: 1,
         content: "China is in Asia",
-        answer: [true],
-        options: [true, false],
+        answer: ["True"],
+        options: ["True", "False"],
         numOptions: 2,
     },
     {
@@ -84,8 +84,8 @@ export default [
         title: "Question 2",
         points: 1,
         content: "Earth is a planet",
-        answer: [true],
-        options: [true, false],
+        answer: ["True"],
+        options: ["True", "False"],
         numOptions: 2,
     },
     {
