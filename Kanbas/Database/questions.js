@@ -7,7 +7,8 @@ export default [
         points: 1,
         content: "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
         answer: ["Apollo 11"],  
-        options: ["Apollo 11", "Apollo 12", "Apollo 13"]
+        options: ["Apollo 11", "Apollo 12", "Apollo 13"], 
+        numOptions: 3,
     },
     {
         _id: "2",
@@ -18,16 +19,18 @@ export default [
         content: "The earth is flat",
         answer: [false],  
         options: [true, false],  
+        numOptions: 2,
     },
     {
         _id: "3",
         quizId: "1000",
-        questionType: "Multiple Choice",
+        questionType: "Blank",
         title: "Question 3",
         points: 1,
         content: "What city is your school in?",
         answer: ["Boston"],  
         options: [],  
+        numOptions: 3,
     },
 
 ];
