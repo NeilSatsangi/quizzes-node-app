@@ -7,9 +7,10 @@ export default [
         points: 1,
         content: "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
         answer: ["Apollo 11"],  
-        options: ["Apollo 11", "Apollo 12", "Apollo 13"], 
+        options: ["Apollo 11", "Apollo 12", "Apollo 13"],
         numOptions: 3,
     },
+
     {
         _id: "2",
         quizId: "1000",
@@ -17,8 +18,8 @@ export default [
         title: "Question 2",
         points: 1,
         content: "The earth is flat",
-        answer: [false],  
-        options: [true, false],  
+        answer: ["False"],  
+        options: ["True", "False"], 
         numOptions: 2,
     },
     {
