@@ -34,6 +34,22 @@ function QuestionRoutes(app) {
     res.sendStatus(204);
   });
 
+  app.post("/api/questions/:qid/options", (req, res) => {
+    const { qid } = req.params;
+    const { option } = req.body;
+
+    const question = db.questions.find((q) => q._id === qid);
+
+    if (!question) {
+      return res.status(404).json({ message: "Question not found" });
+    }
+
+    question.options.push(option);
+    question.numOptions++;
+
+    res.json({ message: "Option added successfully", question });
+  });
+
 
 }
 export default QuestionRoutes;
