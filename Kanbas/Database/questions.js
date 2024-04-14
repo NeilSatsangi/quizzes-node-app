@@ -31,7 +31,7 @@ export default [
         content: "What city is your school in?",
         answer: ["Boston"],
         options: [],
-        numOptions: 3,
+        numOptions: 1,
     },
     {
         _id: "4",
