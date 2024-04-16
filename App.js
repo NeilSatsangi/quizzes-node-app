@@ -19,7 +19,7 @@ app.use(cors({
     origin: process.env.FRONTEND_URL_A6,
 }));
 const sessionOptions = {
-    secret: "secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
 };
@@ -33,13 +33,12 @@ if (process.env.NODE_ENV !== "development") {
 }
 
 app.use(session(sessionOptions));
-app.use(cors())
-app.use(express.json());
-ModuleRoutes(app);
 CourseRoutes(app);
+app.use(express.json());
+UserRoutes(app);
+ModuleRoutes(app);
 Lab5(app);
 Hello(app);
 QuizRoutes(app);
 QuestionRoutes(app);
-UserRoutes(app);
 app.listen(process.env.PORT || 4000);
