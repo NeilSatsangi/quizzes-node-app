@@ -8,6 +8,7 @@ export default [
         content: "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
         answer: ["Apollo 11"],
         options: ["Apollo 11", "Apollo 12", "Apollo 13"],
+        selectedOption: '',
         numOptions: 3,
     },
 
@@ -20,6 +21,7 @@ export default [
         content: "The earth is flat",
         answer: ["False"],
         options: ["True", "False"],
+        selectedOption: '',
         numOptions: 2,
     },
     {
@@ -31,6 +33,7 @@ export default [
         content: "What city is your school in?",
         answer: ["Boston"],
         options: [],
+        selectedOption: '',
         numOptions: 1,
     },
     {
@@ -42,6 +45,7 @@ export default [
         content: "Which of the following is NOT a fruit?",
         answer: ["Rhubarb"],
         options: ["Tomatoes", "Avocados", "Rhubarb", "Apple"],
+        selectedOption: '',
         numOptions: 4,
     },
     {
@@ -53,6 +57,7 @@ export default [
         content: "China is in Asia",
         answer: ["True"],
         options: ["True", "False"],
+        selectedOption: '',
         numOptions: 2,
     },
     {
@@ -64,6 +69,7 @@ export default [
         content: "What does JSON stand for",
         answer: ["JavaScript", "Script", "Object", "Notation"],
         options: [],
+        selectedOption: '',
         numOptions: 4,
     },
     {
@@ -75,6 +81,7 @@ export default [
         content: "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
         answer: ["Apollo 11"],
         options: ["Apollo 11", "Apollo 12", "Apollo 13"],
+        selectedOption: '',
         numOptions: 3,
     },
     {
@@ -86,6 +93,7 @@ export default [
         content: "Earth is a planet",
         answer: ["True"],
         options: ["True", "False"],
+        selectedOption: '',
         numOptions: 2,
     },
     {
@@ -97,6 +105,7 @@ export default [
         content: "What state is your school in?",
         answer: ["Massachussets"],
         options: [],
+        selectedOption: '',
         numOptions: 3,
     },
 
