@@ -16,7 +16,7 @@ function QuizRoutes(app) {
       .filter((q) => q.course === cid);
     res.send(quizzes);
   });
-  app.delete("/api/quizzes/delete/:qid", (req, res) => {
+  app.delete("/api/quizzes/:qid", (req, res) => {
     const { qid } = req.params;
     db.quizzes = db.quizzes.filter((q) => q._id !== qid);
     res.sendStatus(200);
