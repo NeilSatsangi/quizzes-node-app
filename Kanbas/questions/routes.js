@@ -25,13 +25,15 @@ function QuestionRoutes(app) {
   });
   app.put("/api/questions/:qid", (req, res) => {
     const { qid } = req.params;
-    const questionIndex = db.modules.findIndex(
+    const questionIndex = db.questions.findIndex(
       (q) => q._id === qid);
     db.questions[questionIndex] = {
       ...db.questions[questionIndex],
       ...req.body
     };
-    res.sendStatus(204);
+
+    // console.log(db.questions)
+    res.send(db.questions[questionIndex]);
   });
 
   app.post("/api/questions/:qid/options", (req, res) => {
